@@ -1,0 +1,30 @@
+//Implementa una nueva clase llamada GestorPagos que cumpla con los siguientes requerimientos:
+
+Registrar un nuevo pago asociado a un préstamo existente:
+Solicitar el ID del préstamo, el monto pagado y la fecha del pago.
+Verificar que el préstamo exista en la base de datos antes de registrar el pago.
+Si el préstamo no existe, lanzar una excepción personalizada PrestamoNoEncontradoException.
+Actualizar el saldo restante del préstamo en la base de datos.
+Si el pago cubre la totalidad del monto pendiente, actualizar el estado del préstamo a "CANCELADO".
+Mostrar el historial de pagos de un préstamo en consola:
+Consultar y listar los pagos asociados a un préstamo en orden cronológico.
+Usar colecciones y Stream API para filtrar pagos realizados dentro de un rango de fechas (por ejemplo, pagos del último mes).
+Manejar las excepciones con bloques try-catch, incluyendo mensajes descriptivos y un bloque finally que cierre correctamente las conexiones JDBC.
+Script .sql con la tabla pagos:
+
+
+
+ CREATE TABLE pagos (
+
+  id INT AUTO_INCREMENT PRIMARY KEY,
+
+  prestamo_id INT,
+
+  monto DECIMAL(10,2),
+
+  fecha_pago DATE,
+
+  FOREIGN KEY (prestamo_id) REFERENCES prestamos(id)
+
+);
+
