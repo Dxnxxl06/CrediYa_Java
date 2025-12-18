@@ -1,5 +1,5 @@
 DROP DATABASE IF EXISTS crediya_db;
-CREATE DATABASE crediya_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE DATABASE crediya_db;
 USE crediya_db;
 
 -- Tabla de Usuarios (login y autenticación)
